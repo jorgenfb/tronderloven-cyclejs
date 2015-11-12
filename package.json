@@ -1,0 +1,30 @@
+{
+  "name": "tronderloven-cyclejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --content-base src",
+    "build": "webpack -p",
+    "postbuild": "cp src/*.html dist/ && cp src/*.css dist/ && cp src/*.json dist/",
+    "predeploy": "build",
+    "deploy": "git push origin `git subtree split --prefix dist master`:gh-pages --force",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cycle/core": "^5.0.1",
+    "@cycle/dom": "^7.1.1",
+    "@cycle/http": "^6.1.0",
+    "rx": "^4.0.6"
+  },
+  "devDependencies": {
+    "babel-core": "^6.1.4",
+    "babel-loader": "^6.1.0",
+    "babel-preset-es2015": "^6.1.4",
+    "eslint": "^1.9.0",
+    "webpack": "^1.12.4",
+    "webpack-dev-server": "^1.12.1"
+  }
+}
